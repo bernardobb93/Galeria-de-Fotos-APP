@@ -1,0 +1,64 @@
+<html>
+    <head>
+        <meta charset="utf-8"/>
+        <meta name="viewport" content="widht=device-width,initial-scale=1.0,maximum-scale=1.0"/>
+    </head>
+    <style>
+        *{margin:0;padding:0;box-sizing: border-box;}
+        .header{
+            background-color:darkgreen;
+            text-align: center;
+            width: 100%;
+            color: white;
+            font-size: 26px;
+            padding: 20px 0;
+        }
+        img{
+            max-width: 100%;
+            width: 90%;
+            display: block;
+            margin: 10px auto;
+        }
+        .btn-load{
+            padding: 30px 0;
+        }
+        button{
+            background-color:darkgreen;
+            width: 200px;
+            height: 40px;
+            color: white;
+            cursor: pointer;
+        }
+    </style>
+    <body>
+        <div class="header">
+            Aplicativo Galeria
+        </div>
+        <div id="galeria" class="galeria">
+        </div>
+        <div class="btn-load">
+            <button id="carregar-mais">Carregar mais</button>
+        </div>
+    <script>
+        var galeria=document.getElementById('galeria');
+        var quantidadeImagens=2;
+        var controle=0;
+        var carregarMais=document.getElementById('carregar-mais');
+
+        for(var i =0;i<quantidadeImagens;i++){
+            galeria.innerHTML+=`<img src="https://picsum.photos/400?random=`+i+`"/>`
+        }
+        carregarMais.addEventListener('click',()=>{
+           let image = document.createElement('img');
+           controle++;
+           image.src= 'https://picsum.photos/400?random='+controle;    
+            carregarMais.innerHTML="Carregando..."
+           image.addEventListener('load',function(){
+            carregarMais.innerHTML="Carregar mais"
+           })
+           galeria.appendChild(image);
+        })
+    </script>
+    
+    </body>
+</html>
