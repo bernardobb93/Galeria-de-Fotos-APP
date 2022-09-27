@@ -1,1 +1,0 @@
-# Galeria-de-Fotos-APP
