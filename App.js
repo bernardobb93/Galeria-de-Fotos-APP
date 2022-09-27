@@ -12,7 +12,7 @@ export default function App() {
       <StatusBar hidden/>
       <WebView 
       style={styles.container}
-      source={{ uri: 'https://expo.dev' }}
+      source={{ uri: 'https://bernardobb93.github.io/Galeria-de-Fotos-APP/' }}
     />
     </View>
   );
